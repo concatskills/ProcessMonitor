@@ -1,4 +1,25 @@
-﻿param(
+﻿#REQUIRES -Version 5.0
+
+<#
+.SYNOPSIS
+    Process Monitor
+.DESCRIPTION
+    Record trace to monitor process
+.NOTES
+    File Name      : ProcessMonitor.ps1
+    Author         : Sarah BESSARD (sarah.bessard@concatskills.com)
+    Prerequisite   : PowerShell V5 over Vista and upper.
+    Copyright 2018 - Sarah BESSARD / CONCAT SKILLS
+.LINK
+    Script posted over:
+    http://www.concatskills.com
+    https://github.com/concatskills/ProcessMonitor
+.EXAMPLE
+    .\ProcessMonitor.ps1 -DurationInSec 30
+
+#>
+
+param(
     [Parameter(Mandatory=$True)] [int]$DurationInSec
     )
 
@@ -13,6 +34,8 @@ Push-Location $ScriptDirectory
 $ProcMonExe = "$($ScriptDirectoryExe)\Procmon.exe"
 $CapturePml = "$($ScriptDirectoryOut)\capture.pml"
 $CaptureCsv = "$($ScriptDirectoryOut)\capture.csv"
+
+$DurationInSec = [System.Math]::Abs($DurationInSec)
 
 If(!(test-path $ScriptDirectoryOut)) { New-Item -ItemType Directory -Force -Path $ScriptDirectoryOut } else { Get-ChildItem -Path $ScriptDirectoryOut -Include *.* -Recurse  | remove-Item -Recurse -Force }
  
