@@ -14,7 +14,6 @@
     https://github.com/concatskills/ProcessMonitor
 .EXAMPLE
     .\ProcessMonitor.ps1 -DurationInSec 30
-
 #>
 
 param(
