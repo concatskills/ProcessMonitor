@@ -39,6 +39,6 @@ $DurationInSec = [System.Math]::Abs($DurationInSec)
 
 If(!(test-path $ScriptDirectoryOut)) { New-Item -ItemType Directory -Force -Path $ScriptDirectoryOut } else { Get-ChildItem -Path $ScriptDirectoryOut -Include *.* -Recurse  | remove-Item -Recurse -Force }
  
-# Warning UAC & run than admin
+# Warning UAC & run as admin
 Start-Process -FilePath $ProcMonExe -ArgumentList “/Quiet /AcceptEula /Minimized /Backingfile $CapturePml /Runtime $DurationInSec” -wait -Verb RunAs
 Start-Process -FilePath $ProcMonExe -ArgumentList "/Openlog $CapturePml /SaveAs $CaptureCsv" -wait -Verb RunAs
