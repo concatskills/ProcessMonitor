@@ -12,7 +12,7 @@
     Copyright 2018 - Sarah BESSARD / CONCAT SKILLS
 .LINK
     Script posted over:
-    http://www.concatskills.com
+    http://www.concatskills.com/2018/02/09/trace-process-monitor
     https://github.com/concatskills/ProcessMonitor
 .EXAMPLE
     .\ProcessMonitor.ps1 -DurationInSec 30
