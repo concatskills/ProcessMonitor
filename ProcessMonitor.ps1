@@ -1,5 +1,3 @@
-﻿#REQUIRES -Version 5.0
-
 <#
 .SYNOPSIS
     Process Monitor
