@@ -17,7 +17,7 @@
 #>
 
 param(
-    [Parameter(Mandatory=$False)] [int]$DurationInSec=30
+    [Parameter(Mandatory=$True)] [int]$DurationInSec
     )
 
 clear-host
